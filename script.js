@@ -1,10 +1,16 @@
 console.log("-- Step 1 --");
 
 function greet(name) {
-    console.log(`Hello, ${name}!\n\n`);
+    if (name === ("Kevin")) {
+        console.log(`Hello, ${name}!`);
+    } else {
+        console.log("Good day!\n\n"); // Bonus
+    }
+
 }
 
 greet("Kevin");
+greet(" ")
 //////////////////////////////////////////////////////
 console.log("-- Step 2 --");
 
@@ -30,9 +36,27 @@ function outerFunction() {
     let count = 0;
     return function() {
         count++;
-        console.log(count);
+        console.log(`${count}\n\n`);
     }
 }
 
 const incrementFunc = outerFunction();
 incrementFunc();
+
+////// Bonus //////
+console.log("-- BONUS --");
+function anotherOutFunc() {
+    const arr = ["Orange", "Blue", "Green"];
+    console.log(`Here are my favorite colors: ${arr}`);
+
+    return function() {
+        arr.push("Yellow");
+        console.log(`After adding Yellow: ${arr}`);
+        
+    }
+    
+}
+
+const colorFunc = anotherOutFunc();
+colorFunc();
+
